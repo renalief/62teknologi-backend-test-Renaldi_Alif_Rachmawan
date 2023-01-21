@@ -10,7 +10,18 @@ use Illuminate\Support\Arr;
 
 class PostsController extends Controller
 {
-    public function index(Request $request)
+    
+    public function index()
+    {
+        $posts = Post::latest()->get();
+        return response([
+            'success' => true,
+            'message' => 'List Semua Posts',
+            'data' => $posts
+        ], 200);
+    }
+    
+    public function search(Request $request)
     {
         $param = 0;
         $id = $request->input('id');
