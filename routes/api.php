@@ -22,5 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/posts/business', 'App\Http\Controllers\api\PostsController@store');
 Route::post('/put/business', 'App\Http\Controllers\api\PostsController@store');
 Route::delete('/del/business/{id?}', 'App\Http\Controllers\api\PostsController@destroy');
-Route::post('/get/business/search', 'App\Http\Controllers\api\PostsController@index');
-// Route::get('/get/business/{id?}', 'App\Http\Controllers\api\PostsController@index');
+Route::post('/get/business/search', 'App\Http\Controllers\api\PostsController@search');
+Route::get('/get/business/', 'App\Http\Controllers\api\PostsController@index');
